@@ -4,14 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/footwear")
-public class MyController {
+public class MyController2 {
 	
 	@RequestMapping
 	public String greetings()
 	{
-		System.out.println("MyController.greetings()");
-		return "footwear-home";
+		System.out.println("MyController2.greetings()");
+		return "welcome";
 	}
 	
 

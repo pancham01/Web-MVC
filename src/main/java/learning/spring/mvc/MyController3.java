@@ -4,14 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/footwear")
-public class MyController {
+@RequestMapping("/electronics")
+public class MyController3 {
 	
 	@RequestMapping
 	public String greetings()
 	{
 		System.out.println("MyController.greetings()");
-		return "footwear-home";
+		return "electronics-home";
 	}
 	
 
