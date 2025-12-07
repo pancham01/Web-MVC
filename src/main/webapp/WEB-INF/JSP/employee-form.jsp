@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Web-MVC</title>
+<title>Insert title here</title>
 </head>
-<body bgcolor="pink">
-	<h1>This is admin portal</h1>
-	<h2>UserName : ${userName} </h2>
+<body>
+
 </body>
 </html>
