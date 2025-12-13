@@ -11,7 +11,7 @@
 	<h2>Employee Form</h2>
 
 	<!-- http://localhost:8080/RadheySpringMvc/ -->
-	<form action="${pageContext.request.contextPath}/getEmp"
+	<form action="${pageContext.request.contextPath}/saveEmp"
 		method="post">
 		<label for="name">Name:</label><input type="text" id="name"
 			name="name" /><br /> <br /> <label for="department">Department:</label><input
