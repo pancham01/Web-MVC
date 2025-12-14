@@ -1,4 +1,4 @@
-package learning.spring.mvc.model;
+package learning.mvc.model;
 
 public class Employee {
 	

@@ -1,4 +1,4 @@
-package learning.spring.mvc;
+package learning.mvc.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import learning.spring.mvc.model.Employee;
+import learning.mvc.model.Employee;
 
 @Controller
 public class EmployeeController {
