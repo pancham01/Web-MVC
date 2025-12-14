@@ -16,9 +16,17 @@ import learning.spring.mvc.model.Employee;
 @Controller
 public class EmployeeController {
 
-	Map<Integer, Employee> map = new HashMap<>();
-	
-	int i=0;
+	static Map<Integer, Employee> map = new HashMap<>();
+
+	int i = 5;
+
+	static {
+		map.put(1, new Employee(1, "Guest1", "CS", 30));
+		map.put(2, new Employee(2, "Guest2", "IT", 30));
+		map.put(3, new Employee(3, "Guest3", "IOT", 30));
+		map.put(4, new Employee(4, "Guest4", "CS", 30));
+		map.put(5, new Employee(5, "Guest5", "AI", 30));
+	}
 
 	@RequestMapping("/")
 	public String greetings() {
@@ -42,34 +50,26 @@ public class EmployeeController {
 //		return "employee-profile";
 //	}
 
-	
-	
-	
 	@PostMapping("/saveEmp")
-	public String formData(@ModelAttribute Employee employee ,Model model)
-	{
+	public String formData(@ModelAttribute Employee employee, Model model) {
 		System.out.println("MyController.formData");
-		
+
 		employee.setId(++i);
-		
+
 		map.put(employee.getId(), employee);
-		
+
 		model.addAttribute("emp", employee);
-		
-		
+
 		return "employee-profile";
 	}
-	
-	
+
 	@GetMapping("/getEmp/{id}")
-	public String getEmpById(@PathVariable("id") int id,Model model)
-	{
-		
-		
+	public String getEmpById(@PathVariable("id") int id, Model model) {
+
 		Employee employee = map.get(id);
-		
+
 		model.addAttribute("emp", employee);
-		
+
 		return "employee-profile";
 	}
 
