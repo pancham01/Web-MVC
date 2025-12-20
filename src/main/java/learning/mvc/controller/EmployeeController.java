@@ -5,12 +5,15 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import learning.mvc.model.Employee;
 
 @Controller
@@ -69,6 +72,36 @@ public class EmployeeController {
 		Employee employee = map.get(id);
 
 		model.addAttribute("emp", employee);
+
+		return "employee-profile";
+	}
+
+	@GetMapping("/setCookie")
+	public String learningCookie(HttpServletResponse response) {
+
+		Cookie cookie = new Cookie("nikhil", "SanvedansheelData");
+
+		cookie.setMaxAge(3600);
+
+		response.addCookie(cookie);
+
+		return "redirect:/getCookie";
+	}
+
+	@GetMapping("/getCookie")
+	public String learningSessionTracking(@CookieValue(name = "nikhil", defaultValue = "defaultVal") String cookie,
+			Model model) {
+
+		System.out.println("Your Session id is: " + cookie);
+		model.addAttribute("myCookie", cookie);
+
+		return "cookie-data";
+	}
+
+	@GetMapping("/getJSESSIONID")
+	public String learningSessionTracking2(@CookieValue("JSESSIONID") String JSESSIONID) {
+
+		System.out.println("Your Session id is: " + JSESSIONID);
 
 		return "employee-profile";
 	}
