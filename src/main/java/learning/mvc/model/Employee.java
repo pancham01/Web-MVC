@@ -1,16 +1,22 @@
 package learning.mvc.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Employee {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name,department;
 	private int age;
 	
 	
 	
-	public Employee(int id, String name, String department, int age) {
-		super();
-		this.id = id;
+	public Employee( String name, String department, int age) {
 		this.name = name;
 		this.department = department;
 		this.age = age;
